@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by naoya on 2017/10/29.
  */
 @Controller("/")
-public class IndexControlloer {
+public class IndexController {
 
     @RequestMapping("/")
     public String index(ModelAndView modelAndView) {
