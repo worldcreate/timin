@@ -6,11 +6,11 @@ import org.seasar.doma.Id;
 @Entity
 public class Employee {
     @Id
-    public Integer id;
+    private Integer id;
 
-    public String name;
+    private String name;
 
-    public Integer age;
+    private Integer age;
 
     public Integer getId() {
         return id;
