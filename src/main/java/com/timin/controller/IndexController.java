@@ -16,7 +16,7 @@ import com.timin.service.SampleService;
  * Created by naoya on 2017/10/29.
  */
 @Controller("/")
-public class IndexControlloer {
+public class IndexController {
 
     private static final Logger logger = LogManager.getLogger(IndexControlloer.class);
     
