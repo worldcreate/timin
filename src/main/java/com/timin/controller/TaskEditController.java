@@ -19,15 +19,15 @@ import java.util.List;
  */
 @RestController()
 @RequestMapping("/task")
-public class TaskController {
+public class TaskEditController {
 
-    private static final Logger logger = LogManager.getLogger(TaskController.class);
+    private static final Logger logger = LogManager.getLogger(TaskEditController.class);
 
     @Autowired
     TaskUpdateService taskUpdateService;
 
     @RequestMapping("/add")
-    public AddTask index(@RequestParam("name")String name) {
+    public AddTask add(@RequestParam("name")String name) {
         taskUpdateService.add(name);
         AddTask task = AddTask.builder().taskId(1).inTime(LocalDateTime.now()).name(name).build();
         return task;
