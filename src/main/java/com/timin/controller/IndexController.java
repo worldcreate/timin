@@ -18,17 +18,17 @@ import com.timin.service.SampleService;
 @Controller("/")
 public class IndexController {
 
-    private static final Logger logger = LogManager.getLogger(IndexControlloer.class);
-    
+    private static final Logger logger = LogManager.getLogger(IndexController.class);
+
     @Autowired
     SampleService sampleService;
 
     @RequestMapping("/")
     public String index(ModelAndView modelAndView) {
         List<Employee> employees = sampleService.findAll();
-        employees.forEach(entity -> {
-            logger.info("id={}, name={}, age={}", entity.getId(), entity.getName(), entity.getAge());
-        });
+        employees.forEach(entity ->
+            logger.info("id={}, name={}, age={}", entity.getId(), entity.getName(), entity.getAge())
+        );
 
         return "index";
     }

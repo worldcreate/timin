@@ -7,10 +7,12 @@ import org.seasar.doma.Select;
 import org.seasar.doma.boot.ConfigAutowireable;
 
 import com.timin.entity.Employee;
+import org.springframework.stereotype.Repository;
 
 @Dao
 @ConfigAutowireable
-public interface SampleDao {
+@Repository
+public interface SampleRepository {
     @Select
     List<Employee> selectAll();
 }
