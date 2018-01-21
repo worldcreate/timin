@@ -33,6 +33,22 @@ group = 'com.timin'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
+configurations {
+    provided
+}
+
+sourceSets {
+    main { compileClasspath += configurations.provided }
+}
+
+
+eclipse {
+    classpath {
+        plusConfigurations += [configurations.provided]
+        // noExportConfigurations += [configurations.provided]
+    }
+}
+
 // JavaクラスとSQLファイルの出力先ディレクトリを同じにする
 processResources.destinationDir = compileJava.destinationDir
 // コンパイルより前にSQLファイルを出力先ディレクトリにコピーするために依存関係を逆転する
