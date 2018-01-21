@@ -2,21 +2,22 @@ package com.timin.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import org.seasar.doma.Entity;
 import org.seasar.doma.Id;
+
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity(immutable = true)
 @Builder
 @AllArgsConstructor
 @Getter
-public class Employee {
+public class RenameTask {
 
     @Id
-    private final Integer id;
+    private final Integer taskId;
 
-    private final String name;
+    private final LocalDateTime inTime;
 
-    private final Integer age;
 }

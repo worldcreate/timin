@@ -77,6 +77,8 @@ dependencies {
 	compile "org.seasar.doma:doma:2.19.0"
 	compile("org.springframework.boot:spring-boot-starter-jdbc")
 	compile("org.seasar.doma.boot:doma-spring-boot-starter:1.1.1")
+	
+	compile('net.sourceforge.nekohtml:nekohtml:1.9.22')
 	compileOnly('org.projectlombok:lombok')
 	runtime('mysql:mysql-connector-java')
 
