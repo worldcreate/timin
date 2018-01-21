@@ -9,8 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.timin.entity.Employee;
-import com.timin.service.SampleService;
+import com.timin.entity.AddTask;
 
 /**
  * Created by naoya on 2017/10/29.
@@ -20,15 +19,9 @@ public class IndexController {
 
     private static final Logger logger = LogManager.getLogger(IndexController.class);
 
-    @Autowired
-    SampleService sampleService;
 
     @RequestMapping("/")
     public String index(ModelAndView modelAndView) {
-        List<Employee> employees = sampleService.findAll();
-        employees.forEach(entity ->
-            logger.info("id={}, name={}, age={}", entity.getId(), entity.getName(), entity.getAge())
-        );
 
         return "index";
     }
