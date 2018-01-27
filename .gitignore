@@ -1,6 +1,10 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+src/main/resources/templates/**/index.html
+
+src/main/webapp/*
+!src/main/webapp/.gitkeep
 
 ### STS ###
 .apt_generated
@@ -23,3 +27,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/bin/
