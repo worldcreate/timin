@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Sample from './sample/Sample';
 import Category from './Category'
 
 class App extends Component {
@@ -20,7 +19,6 @@ class App extends Component {
               </div>
           </div>
 
-          <Sample />
       </div>
     );
   }
