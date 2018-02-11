@@ -3,6 +3,8 @@ package com.timin.entity;
 import java.time.LocalDateTime;
 
 import org.seasar.doma.Entity;
+import org.seasar.doma.GeneratedValue;
+import org.seasar.doma.GenerationType;
 import org.seasar.doma.Id;
 import org.seasar.doma.jdbc.entity.NamingType;
 
@@ -14,11 +16,15 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor
 @Getter
-public class ActiveIn {
+public class Active {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private final Long id;
     private final Long taskId;
-
-    private final LocalDateTime inTime;
+    private final LocalDateTime from;
+    private final LocalDateTime thru;
+    private final LocalDateTime in;
+    private final LocalDateTime out;
 
 }

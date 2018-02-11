@@ -9,23 +9,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.timin.entity.ActiveIn;
-import com.timin.service.task.move.update.TaskMoveUpdateService;
+import com.timin.service.task.active.update.TaskActiveUpdateService;
 
 /**
  * Created on 2017/10/29.
  */
 @RestController()
 @RequestMapping("/task")
-public class TaskMoveController {
+public class TaskActiveController {
 
-    private static final Logger logger = LogManager.getLogger(TaskMoveController.class);
+    private static final Logger logger = LogManager.getLogger(TaskActiveController.class);
 
     @Autowired
-    TaskMoveUpdateService taskMoveUpdateService;
+    TaskActiveUpdateService taskActiveUpdateService;
 
     @RequestMapping(value = "/active/{id}", method = RequestMethod.POST)
     public ActiveIn active(@PathVariable("id")Long id) {
-        return taskMoveUpdateService.active(id);
+        return taskActiveUpdateService.active(id);
     }
 
 }

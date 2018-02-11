@@ -1,10 +1,9 @@
-package com.timin.repository;
+package com.timin.repository.task.write;
 
-import com.timin.entity.AddTask;
-import com.timin.entity.DeleteTask;
-import com.timin.entity.RenameTask;
+import com.timin.entity.Task;
 import org.seasar.doma.Dao;
 import org.seasar.doma.Insert;
+import org.seasar.doma.Update;
 import org.seasar.doma.boot.ConfigAutowireable;
 import org.seasar.doma.jdbc.Result;
 import org.springframework.stereotype.Repository;
@@ -16,11 +15,8 @@ import java.util.List;
 @Repository
 public interface TaskRepository {
     @Insert
-    Result<AddTask> add(AddTask entity);
+    Result<Task> insert(Task entity);
 
-    @Insert
-    Result<RenameTask> rename(RenameTask entity);
-
-    @Insert
-    Result<DeleteTask> delete(DeleteTask entity);
+    @Update(excludeNull = true)
+    Result<Task> update(Task entity);
 }

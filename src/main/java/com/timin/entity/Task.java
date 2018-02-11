@@ -14,15 +14,16 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @Getter
-public class AddTask {
+public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final Integer taskId;
+    private final Long id;
+    private final TaskName taskName;
+    private final LocalDateTime from;
+    private final LocalDateTime thru;
+    private final LocalDateTime in;
+    private final LocalDateTime out;
 
-    @NonNull
-    private final String name;
-
-    private final LocalDateTime inTime;
 
 }
