@@ -1,4 +1,4 @@
-package com.timin.entity;
+package com.timin.repository.task.write.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,16 +15,15 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @Getter
-public class TaskName {
+public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private final Long id;
-    private final Long taskId;
-    private final String name;
     private final LocalDateTime from;
     private final LocalDateTime thru;
     private final LocalDateTime in;
     private final LocalDateTime out;
+
 
 }

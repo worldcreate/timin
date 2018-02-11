@@ -1,8 +1,8 @@
 package com.timin.service.task.update;
 
-import com.timin.controller.common.Constant;
-import com.timin.entity.Task;
-import com.timin.entity.TaskName;
+import com.timin.repository.task.write.entity.Task;
+import com.timin.repository.task.write.entity.TaskName;
+import com.timin.repository.Constant;
 import com.timin.repository.task.write.TaskNameRepository;
 import com.timin.repository.task.write.TaskRepository;
 import org.seasar.doma.jdbc.Result;
@@ -23,7 +23,7 @@ public class TaskUpdateServiceImpl implements TaskUpdateService {
      * {@inheritDoc}
      */
     @Override
-    public int add(String name) {
+    public com.timin.domain.task.Task add(String name) {
         LocalDateTime now = LocalDateTime.now();
 
         Task task = Task.builder()
@@ -41,6 +41,7 @@ public class TaskUpdateServiceImpl implements TaskUpdateService {
 
         Result<TaskName> nameResult = taskNameRepository.insert(nameData);
 
-        return result.getCount();
+        // FIXME
+        return null;
     }
 }

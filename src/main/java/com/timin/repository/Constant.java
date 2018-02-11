@@ -1,4 +1,4 @@
-package com.timin.controller.common;
+package com.timin.repository;
 
 import java.time.LocalDateTime;
 

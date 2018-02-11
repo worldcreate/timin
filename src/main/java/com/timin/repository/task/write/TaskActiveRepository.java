@@ -1,6 +1,6 @@
 package com.timin.repository.task.write;
 
-import com.timin.entity.Active;
+import com.timin.repository.task.write.entity.Active;
 import org.seasar.doma.Dao;
 import org.seasar.doma.Insert;
 import org.seasar.doma.Update;

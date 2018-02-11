@@ -2,8 +2,8 @@ package com.timin.service.task.active.update;
 
 import java.time.LocalDateTime;
 
-import com.timin.controller.common.Constant;
-import com.timin.entity.Active;
+import com.timin.repository.Constant;
+import com.timin.repository.task.write.entity.Active;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

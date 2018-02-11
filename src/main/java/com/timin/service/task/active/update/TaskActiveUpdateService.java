@@ -1,7 +1,7 @@
 package com.timin.service.task.active.update;
 
 
-import com.timin.entity.Active;
+import com.timin.repository.task.write.entity.Active;
 
 public interface TaskActiveUpdateService {
 

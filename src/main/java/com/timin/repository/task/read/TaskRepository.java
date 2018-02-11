@@ -1,22 +1,34 @@
 package com.timin.repository.task.read;
 
-import com.timin.entity.Task;
-import org.seasar.doma.Dao;
-import org.seasar.doma.Insert;
-import org.seasar.doma.Select;
-import org.seasar.doma.Update;
+import com.timin.domain.task.Task;
+import com.timin.repository.mapper.TaskMapper;
+import com.timin.repository.task.read.dao.TaskDao;
 import org.seasar.doma.boot.ConfigAutowireable;
-import org.seasar.doma.jdbc.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
-@Dao
 @ConfigAutowireable
 @Repository
-public interface TaskRepository {
-    @Select
-    List<Task> selectAll(LocalDateTime now);
+public class TaskRepository {
+
+    @Autowired
+    private TaskDao taskDao;
+
+    @Autowired
+    private WorkTimeRepository workTimeRepository;
+
+    @Autowired
+    private TaskMapper taskMapper;
+
+    public List<Task> fetchAllTask() {
+        LocalDateTime now = LocalDateTime.now();
+        return taskDao.selectAll(now)
+                .stream()
+                .map(task -> taskMapper.convert(task, workTimeRepository.selectByTaskId(task.getId(), now)))
+                .collect(Collectors.toList());
+    }
 }
